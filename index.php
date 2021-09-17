@@ -6,8 +6,8 @@ $categorias[] = 'adulto';
 
 //print_r($categorias);
 
-$nome = 'Luiz';
-$idade = 16;
+$nome = 'Alice';
+$idade = 26;
 
 //var_dump($nome);
 //var_dump($idade);
