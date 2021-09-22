@@ -8,11 +8,20 @@ $nome = $_POST['nome'];
 $idade = $_POST ['idade'] ;
 
 if(empty($nome))
-{
-    echo 'Digite o nome por favor';
-    return;
+    {
+        echo 'Digite o nome por favor';
+        return;
 
-}
+    }
+
+if(strlen($nome)< 3)
+    {
+        echo 'O nome deve conter mais de três caracteres';
+        return;
+    }
+
+
+
 if($idade <= 12)
 {
     for($i = 0; $i <= count($categorias); $i++)
