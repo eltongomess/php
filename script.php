@@ -4,14 +4,15 @@ $categorias[] = 'infantil';
 $categorias[] = 'adolescente';
 $categorias[] = 'adulto';
 
-//print_r($categorias);
-
 $nome = $_POST['nome'];
 $idade = $_POST ['idade'] ;
 
-//var_dump($nome);
-//var_dump($idade);
+if(empty($nome))
+{
+    echo 'Digite o nome por favor';
+    return;
 
+}
 if($idade <= 12)
 {
     for($i = 0; $i <= count($categorias); $i++)
