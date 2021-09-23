@@ -25,6 +25,12 @@ if(strlen($nome) > 40)
         return;
     }
 
+if(!is_numeric($idade))
+    {
+        echo 'Informe um número para idade';
+        return;
+    }
+
 
 
 if($idade <= 12)
