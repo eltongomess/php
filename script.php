@@ -1,4 +1,7 @@
 <?php
+    session_start();
+
+
 $categorias = [];
 $categorias[] = 'infantil';
 $categorias[] = 'adolescente';
@@ -9,31 +12,37 @@ $idade = $_POST ['idade'] ;
 
 if(empty($nome))
     {
-        echo 'Digite o nome por favor';
-        return;
+        $_SESSION['mensagem.de.erro'] = 'O nome não pode ser vazio';
+         header('location: index.php');
+         return;
+                
     }
 
-if(strlen($nome)< 3)
+else if(strlen($nome)< 3)    
     {
-        echo 'O nome deve conter mais de três caracteres';
+
+        $_SESSION['mensagem.de.erro'] = 'O nome deve conter mais de três caracteres';
+         header('location: index.php');
+         return;
+    }
+
+ else if(strlen($nome) > 40)
+    {   $_SESSION['mensagem.de.erro'] = 'O nome é muito extenso!';
+        header('location: index.php');
+        return;
+                
+    }
+
+else if (!is_numeric($idade))
+    {   
+        $_SESSION['mensagem.de.erro'] = 'Informe um número para idade';
+        header('location: index.php');
         return;
     }
 
-if(strlen($nome) > 40)
-    {
-        echo 'O nome é muito extenso!';
-        return;
-    }
-
-if(!is_numeric($idade))
-    {
-        echo 'Informe um número para idade';
-        return;
-    }
 
 
-
-if($idade <= 12)
+else if($idade <= 12)
 {
     for($i = 0; $i <= count($categorias); $i++)
     {
@@ -42,7 +51,7 @@ if($idade <= 12)
     }
         
 }
-elseif($idade >= 13 && $idade <= 18)
+else if($idade >= 13 && $idade <= 18)
 {
 for($i = 0; $i <= count($categorias); $i++)
     {
