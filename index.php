@@ -1,5 +1,7 @@
 <?php
-    session_start();
+
+    include "servico/servicoMensagemsessao.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@
 
         <?php
 
-             $mensagemDeSucesso = isset($_SESSION['mensagem.de.sucesso']) ? $_SESSION['mensagem.de.sucesso'] : '';
+             $mensagemDeSucesso = obterMensagemSucesso();
 
             if(!empty($mensagemDeSucesso))
             {   
@@ -28,7 +30,7 @@
               
             }
 
-            $mensagemDeErro = isset($_SESSION['mensagem.de.erro']) ? $_SESSION['mensagem.de.erro'] : '';
+            $mensagemDeErro = obterMensagemErro();
 
             if(!empty($mensagemDeErro))
             {

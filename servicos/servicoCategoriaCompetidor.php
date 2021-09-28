@@ -16,7 +16,8 @@ function defineCategoriaCompetidor(string $nome, string $idade) : ?string
 {
     for($i = 0; $i <= count($categorias); $i++)
     {
-        if($categorias[$i] == 'infantil'){
+        if($categorias[$i] == 'infantil')
+        {
          setarMessagemSucesso('O nadador '.$nome. ' compete na categoria infantil e tem ' .$idade.' anos.');          
            return null;
         }
