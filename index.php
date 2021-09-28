@@ -24,7 +24,7 @@
 
             if(!empty($mensagemDeSucesso))
             {   
-                echo $mensagemDeSucesso."<br>";                             
+                echo $mensagemDeSucesso;                             
               
             }
 
